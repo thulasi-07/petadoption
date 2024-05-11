@@ -1,6 +1,7 @@
 <?php
 require '../config.php';
 
+
 // Check if the POST data is set
 if (isset($_POST["email"]) && isset($_POST["password"])) {
     // Sanitize user input

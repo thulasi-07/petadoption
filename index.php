@@ -9,24 +9,10 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="Adoptorgetinvolved.html">ADOPT OR GET INVOLVED</a></li>
-            <li><a href="Dogs&puppies.html">DOGS & PUPPIES</a></li>
-            <li><a href="Cats&kittens.html">CATS & KITTENS</a></li>
-            <li><a href="d:\PROJECTS\WEB\details.html">MORE DETAILS ABOUT PETS</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-            <li class="right">
-                <a href="login.php" class="login">Login</a>
-            </li>
-            <li class="right">
-                <a href="signup.html" class="signup">Sign Up</a>
-            </li>
-        </ul>
-    </nav>
 
+    <?php include 'includes/header.php' ?>
     <div class="image-container">
-        <img src="c:\Users\thula\Downloads\aw2.jpg" alt="Image">
+        <img src="images/backgroundimg.jpeg" alt="Image">
         <div class="text-overlay">
             <h2><u><b>The Pet Haven</b></u></h2>
             <p>"Pet adoption is the process of transferring responsibility for a pet that was previously owned by

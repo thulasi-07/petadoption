@@ -36,7 +36,7 @@
             margin-bottom: 10px;
         }
 
-        input[type="text"],
+        input[type="email"],
         input[type="password"] {
             padding: 9px;
         }
@@ -53,15 +53,15 @@
 
 <body>
     <div class="container">
-        <form action="/login" method="post">
+        <form action="controllers/loginbackend.php" method="post">
             <h1>Login</h1>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <label name="email" for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
             <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input name="password" type="password" id="password" name="password" required>
             <br>
-            <button type="submit">Submit</button>
+            <button name="l_user" type="submit">Submit</button>
         </form>
     </div>
 </body>

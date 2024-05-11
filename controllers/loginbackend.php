@@ -2,8 +2,8 @@
 require '../config.php'; // Include the configuration file
 
 if (isset($_POST['l_user'])) {
-    $uemail = $_POST['l_email']; // Get the email from the form
-    $upass = $_POST['l_password']; // Get the password from the form
+    $uemail = $_POST['email']; // Get the email from the form
+    $upass = $_POST['password']; // Get the password from the form
 
     // Retrieve user data from the database based on the provided email
     $stmt = $admin->ret("SELECT * FROM `users` WHERE `u_email`='$uemail'");
@@ -20,7 +20,7 @@ if (isset($_POST['l_user'])) {
             $_SESSION['user_id'] = $id; // Set user ID in session
 
             // Redirect user to the specified page after successful login
-            echo "<script>alert('Login successful'); window.location='../getStarted.php'</script>";
+            echo "<script>alert('Login successful'); window.location='../index.php'</script>";
         } else {
             // Password incorrect
             echo "<script>alert('Email or password incorrect!'); window.location='../login.php'</script>";
