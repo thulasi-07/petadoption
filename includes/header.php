@@ -13,13 +13,15 @@ if (isset($_SESSION['user_id'])) {
     <ul>
         <li><a href="Adoptorgetinvolved.php">ADOPT OR GET INVOLVED</a></li>
         <li><a href="Dogs&puppies.php">DOGS & PUPPIES</a></li>
-        <li><a href="Cats&kittens.php">CATS & KITTENS</a></li>
         <?php if (isset($row['user_id'])): ?>
             <li class="right">
                 <a class="login"><?php echo $row['username']; ?></a>
             </li>
             <li class="right">
                 <a href="controllers/u_logout.php" class="signup">Log Out</a>
+            </li>
+            <li class="right">
+                <a href="petdetailsform.php" class="signup">Add Pet Details</a>
             </li>
         <?php else: ?>
             <li class="right">
