@@ -12,7 +12,7 @@ if (isset($_SESSION['user_id'])) {
 <nav style="padding-right:40px">
     <ul>
         <li><a href="Adoptorgetinvolved.php">ADOPT OR GET INVOLVED</a></li>
-        <li><a href="Dogs&puppies.php">DOGS & PUPPIES</a></li>
+        <li><a href="petlisting.php"> All Pets</a></li>
         <?php if (isset($row['user_id'])): ?>
             <li class="right">
                 <a class="login"><?php echo $row['username']; ?></a>
