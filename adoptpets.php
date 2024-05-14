@@ -15,8 +15,16 @@
 
     <div class="container">
         <?php
-        // Assuming $admin->ret() returns a valid PDO statement
-        $stmtt = $admin->ret("SELECT * from `pets`");
+        $userid = $_SESSION['user_id'];
+
+        $stmtt = $admin->ret("
+            SELECT pets.*, petcart.dateadded 
+            FROM pets 
+            INNER JOIN petcart ON pets.petid = petcart.petid
+            WHERE petcart.user_id = :$uid
+        ");
+        `user_id`='$uid'
+       
 
         while ($rowtt = $stmtt->fetch(PDO::FETCH_ASSOC)) {
             ?>
@@ -30,12 +38,12 @@
                     </div>
                     <div class="group-div">
                         <p>Breed: <span class="breed"><?php echo $rowtt['breed'] ?></span></p>
-                        <p>Gender: <span class="gender">Gender</span></p>
+                        <p>Gender: <span class="gender"><?php echo $rowtt['gender'] ?></span></p>
                     </div>
                     <p>Description: <span class="description"><?php echo $rowtt['description'] ?></span></p>
                     <div class="group-div">
                         <p>Pet Status: <span class="pet-status"><?php echo $rowtt['petstatus'] ?></span></p>
-                        <button class="adopt-button">Adopt</button>
+                        <p>Date Added: <span class="date-added"><?php echo $rowtt['dateadded'] ?></span></p>
                     </div>
                 </div>
             </div>
