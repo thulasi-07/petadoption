@@ -12,7 +12,17 @@ define('DB_TYPE', 'mysql'); //database drive eg. mysql, pgsql, mongodb etc
 //url information
 define('BASE_URL', 'http://localhost/petadoption/');
 
+try {
+    // Attempt to establish a database connection
+    $conn = new PDO(DB_TYPE . ":host=" . DB_SERVER . ";dbname=" . DB_DATABASE, DB_USER, DB_PASSWORD);
+    // Set PDO error mode to exception for better error handling
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (PDOException $e) {
+    // If connection fails, display an error message and exit
+    echo "Connection failed: " . $e->getMessage();
+    exit;
+}
 // included main class
-require_once 'app/Main.php';
 require_once 'app/Admin.php';
 $admin = new Admin();

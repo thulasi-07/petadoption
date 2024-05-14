@@ -23,8 +23,8 @@
             INNER JOIN petcart ON pets.petid = petcart.petid
             WHERE petcart.user_id = :$uid
         ");
-        `user_id`='$uid'
-       
+
+
 
         while ($rowtt = $stmtt->fetch(PDO::FETCH_ASSOC)) {
             ?>
