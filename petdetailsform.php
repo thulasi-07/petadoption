@@ -12,8 +12,10 @@
 </head>
 
 <body>
-    <?php include 'includes/header.php' ?>
-
+    <?php include 'includes/header.php';
+    if (!isset($_SESSION['user_id'])) {
+        header('location:login.php');
+    } ?>
     <div class="container">
         <h2>Pet Adoption Form</h2>
         <form action="controllers/petdetailformbackend.php" method="post" enctype="multipart/form-data">

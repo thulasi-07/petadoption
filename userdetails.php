@@ -16,7 +16,8 @@
     <div class="container">
         <?php
         // Assuming $admin->ret() returns a valid PDO statement
-        $stmtt = $admin->ret("SELECT * from `pets`");
+        $stmtt = $admin->ret("SELECT * from `pets` WHERE `user_id`=$uid ");
+
         while ($rowtt = $stmtt->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <div class="card">
@@ -37,10 +38,11 @@
                                     style="color:green; font:bolder;">Adopted
                                 </span> <?php } else { ?> <span style="color:red; font:bolder;">Not Adopted
                                 </span> <?php } ?></p>
-                        <?php if ($rowtt['petstatus'] == "false" && isset($_SESSION['user_id']) && !($rowtt['user_id'] == $uid)) { ?>
-                            <a href="controllers/petadoptbackend.php?pid=<?php echo $rowtt['petid']; ?>"
-                                class="adopt-button">Adopt</a>
-                        <?php } ?>
+
+                        <a style="background-color:red;text-decoration:none;"
+                            href="controllers/deletepetbackend.php?pid=<?php echo $rowtt['petid']; ?>"
+                            class="adopt-button">Delete</a>
+
                     </div>
                 </div>
             </div>

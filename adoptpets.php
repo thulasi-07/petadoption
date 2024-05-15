@@ -15,16 +15,14 @@
 
     <div class="container">
         <?php
-        $userid = $_SESSION['user_id'];
+
 
         $stmtt = $admin->ret("
-            SELECT pets.*, petcart.dateadded 
-            FROM pets 
-            INNER JOIN petcart ON pets.petid = petcart.petid
-            WHERE petcart.user_id = :$uid
-        ");
-
-
+             SELECT pets.* 
+                FROM pets 
+                INNER JOIN petcart ON pets.petid = petcart.petid
+             WHERE petcart.user_id = $uid
+");
 
         while ($rowtt = $stmtt->fetch(PDO::FETCH_ASSOC)) {
             ?>
@@ -42,14 +40,17 @@
                     </div>
                     <p>Description: <span class="description"><?php echo $rowtt['description'] ?></span></p>
                     <div class="group-div">
-                        <p>Pet Status: <span class="pet-status"><?php echo $rowtt['petstatus'] ?></span></p>
-                        <p>Date Added: <span class="date-added"><?php echo $rowtt['dateadded'] ?></span></p>
+                        <p>Pet Status: <?php if ($rowtt['petstatus'] == "true") { ?> <span
+                                    style="color:green; font:bolder;">Adopted
+                                </span> <?php } else { ?> <span style="color:red; font:bolder;">Not Adopted
+                                </span> <?php } ?></p>
                     </div>
                 </div>
             </div>
             <?php
         }
         ?>
+
 
     </div>
 
