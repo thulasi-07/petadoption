@@ -35,7 +35,8 @@
                     <p>Description: <span class="description"><?php echo $rowtt['description'] ?></span></p>
                     <div class="group-div">
                         <p>Pet Status: <span class="pet-status"><?php echo $rowtt['petstatus'] ?></span></p>
-                        <a href="petadoptbackend.php?pid=<?php echo $rowtt['petid']; ?>" class="adopt-button">Adopt</a>
+                        <a href="#" class="adopt-button">Adopt</a>
+                        <!-- petadoptbackend.php?pid=<?php echo $rowtt['petid']; ?> -->
                     </div>
                 </div>
             </div>

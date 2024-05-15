@@ -11,7 +11,7 @@ if (isset($_SESSION['user_id'])) {
 ?>
 <nav style="padding-right:40px;padding:10px">
     <ul>
-        <li><a href="Adoptpets.php">ADOPT PETS</a></li>
+        <!-- <li><a href="Adoptpets.php">ADOPT PETS</a></li> -->
         <li><a href="petlisting.php"> All Pets</a></li>
         <li><a href="index.php">Home</a></li>
 
@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
             <li class="right">
                 <a href="petdetailsform.php" class="signup">Add Pet Details</a>
             </li>
-            
+
         <?php else: ?>
             <li class="right">
                 <a href="login.php" class="login">Login</a>
